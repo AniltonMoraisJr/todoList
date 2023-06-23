@@ -4,9 +4,11 @@ import styles from "./styles";
 
 // import { Container } from './styles';
 
-interface InputProps extends TextInputProps {}
+interface InputProps extends TextInputProps {
+  width?: number;
+}
 
-const Input: React.FC<InputProps> = ({ value, ...rest }) => {
+const Input: React.FC<InputProps> = ({ value, width, ...rest }) => {
   const [isFilled, setIsFilled] = useState(false);
   useEffect(() => {
     if (value) {
@@ -17,7 +19,15 @@ const Input: React.FC<InputProps> = ({ value, ...rest }) => {
   }, [value]);
   return (
     <TextInput
-      style={isFilled ? [styles.input, styles.inputFilled] : styles.input}
+      style={
+        isFilled
+          ? width
+            ? [styles.input, styles.inputFilled, { width }]
+            : [styles.input, styles.inputFilled]
+          : width
+          ? [styles.input, { width }]
+          : styles.input
+      }
       value={value}
       placeholderTextColor={"#808080"}
       {...rest}

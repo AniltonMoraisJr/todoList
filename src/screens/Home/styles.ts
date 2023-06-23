@@ -15,7 +15,9 @@ const styles = StyleSheet.create({
   },
   inputWrapper: {
     position: "absolute",
-    width: "100%",
+    flexDirection: "row",
+    gap: 4,
+    alignItems: "center",
     paddingHorizontal: 24,
     bottom: -20,
     backgroundColor: "transparent",
