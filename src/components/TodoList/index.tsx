@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 import { FlatList, Image, Text, View } from "react-native";
 import useTodoListContext from "../../hooks/useTodoListContext";
 import styles from "./styles";
+import TodoListItem from "./Item";
 
 // import { Container } from './styles';
 
@@ -47,7 +48,7 @@ const TodoList: React.FC = () => {
             </Text>
           </View>
         }
-        renderItem={({ item }) => <Text>{item.description}</Text>}
+        renderItem={({ item }) => <TodoListItem item={item} />}
       />
     </View>
   );

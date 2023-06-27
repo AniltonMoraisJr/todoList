@@ -34,6 +34,7 @@ const HomeLayout: React.FC = () => {
             width={270}
             value={newTask}
             placeholder="Adicione uma nova tarefa"
+            underlineColorAndroid={"transparent"}
             keyboardType="default"
             onChangeText={setNewTask}
           />
